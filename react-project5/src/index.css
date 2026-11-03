@@ -9,21 +9,22 @@ html {
 
 /* font */
 h1{
-  font-size: 40px;
+  font-size: 60px;
   font-weight: 700;
   color: #222222;
 }
 h2{
-  font-size: 25px;
-  color: black;
+  font-size: 35px;
+  color: #222222;
 }
 h3{
-  font-size: 19px;
-  color: black;
+  font-size: 25px;
+  font-weight: normal;
+  color: #222222;
 }
 p{
   font-size: 16px;
-  color: black;
+  color: #222222;
 }
 span{
   color: #1DBF73;

@@ -1,6 +1,7 @@
 @use '../style_layout.scss' as st;
 
 header {
+    background-color: var(--super-light-gray);
     @include st.bigbox(12vh);
 
     .nav {

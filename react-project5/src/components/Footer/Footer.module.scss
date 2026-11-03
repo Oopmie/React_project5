@@ -1,0 +1,46 @@
+.Footer {
+    background-color: black;
+    color: white;
+    padding: 100px 0 60px 0;
+    width: 100%;
+
+    .linksGrid {
+        display: flex;
+        justify-content: space-between;
+        flex-grow: 1;
+        max-width: 65%;
+        gap: 30px;
+
+        .column {
+            h3 {
+                font: {
+                    size: 17px;
+                    weight: 500
+                }
+
+                letter-spacing: 2px;
+                margin: 0 0 60px 0;
+                color: white;
+            }
+
+            ul {
+                list-style: none;
+
+                li {
+                    margin-bottom: 16px;
+
+                    a {
+                        color: #7E7E7E;
+                        text-decoration: none;
+                        font-size: 15px;
+                        transition: color 0.2s ease;
+
+                        &:hover {
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,10 +1,7 @@
 @use '../../style_layout.scss' as st;
 
 .P1_sec1 {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
+    @include st.bigbox(90%);
 
     .container {
         @include st.df_row(90%, 80%);

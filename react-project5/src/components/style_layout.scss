@@ -1,3 +1,24 @@
+:root {
+    //серый
+    --super-light-gray: #F7F6FF;
+    --light-gray: #F2F0FE;
+    --medium-gray: #EBE8FF;
+    --gray: #B0AAD0;
+    --dark-gray: #656084;
+    //зеленый
+    --light-green: #D7FFEC;
+    --green: #1DBF73;
+    //оранжевый
+    --light-orange: #FFEDDD;
+    --orange: #FBA457;
+    //красный
+    --light-red: #FFDBDB;
+    --red: #FF4343;
+    //чб
+    --white: #F6FAFD;
+    --black: #222222;
+}
+
 %df_column {
     height: 90vh;
     width: 100%;
@@ -6,6 +27,7 @@
     justify-content: center;
     align-items: center;
 }
+
 @mixin df_row($height, $width) {
     height: $height;
     width: $width;
@@ -14,6 +36,16 @@
     justify-content: space-between;
     align-items: center;
 }
+
+@mixin bigbox($height) {
+    width: 100%;
+    height: $height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 %container_st {
     display: flex;
@@ -32,25 +64,17 @@
     align-items: center;
 }
 
-@mixin but($width) {
-    border: {
-        color: white;
-        radius: 1px;
-    }
-
-    background-color: transparent;
-    color: white;
-    font-size: 22px;
+@mixin but($width, $colorb, $color) {
+    @include bigbox(50%);
+    font-size: 20px;
     width: $width;
-    height: 6vh;
+    border-radius: 50px;
+    border: none;
+    padding: 20px;    
     cursor: pointer;
 
     &:hover {
-        background-color: white;
-        color: black;
-
-        a {
-            color: black;
-        }
+        background-color: $colorb;
+        color: $color;
     }
 }

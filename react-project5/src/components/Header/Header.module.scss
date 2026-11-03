@@ -1,0 +1,35 @@
+@use '../style_layout.scss' as st;
+
+header {
+    @include st.bigbox(12vh);
+
+    .nav {
+        @include st.df_row(12vh, 80vw);
+
+        .links {
+            @include st.df_row(100%, 40%);
+
+            a {
+                font-size: 20px;
+                text-decoration: none;
+                color: black
+            }
+        }
+
+        .menuRight {
+            @include st.df_row(80%, 20%);
+
+            .RegBtn {
+                color: var(--green);
+                background-color: var(--light-gray);
+                @include st.but(auto, var(--green), var(--light-gray))
+            }
+
+            .LogBtn {
+                color: var(--light-gray);
+                background-color: var(--green);
+                @include st.but(auto, var(--light-gray), var(--green))
+            }
+        }
+    }
+}

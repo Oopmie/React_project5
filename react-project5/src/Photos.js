@@ -33,6 +33,9 @@ import p2s1 from "../src/assets/p2s1.png"
 import star from "../src/assets/star.png"
 import twi from "../src/assets/twi.png"
 import work from "../src/assets/work.png"
+import man from "../src/assets/man.png"
+import manon from "../src/assets/manon.png"
+import str from "../src/assets/str.png"
 
 export const Photos = {
     st45:st45,
@@ -69,5 +72,8 @@ export const Photos = {
     p2s1:p2s1,
     star:star,
     twi:twi,
-    work:work
+    work:work,
+    man:man,
+    manon:manon,
+    str:str
 }

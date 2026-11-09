@@ -13,6 +13,7 @@ export default function Page1(){
             <P1_sec4/>
             <P1_sec5/>
             <Footer/>
+            
         </>
     )
 }

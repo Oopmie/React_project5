@@ -1,0 +1,92 @@
+@use '../../style_layout.scss' as st;
+
+.P3_sec2 {
+    background-color: var(--white);
+    width: 100%;
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+
+    .container {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            width: 100%;
+            margin-bottom: 50px;
+            margin-top: 50px;
+
+            .card {
+                @include st.card_layout;
+                padding: 0;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                min-height: 280px;
+                cursor: pointer;
+                transition: transform 0.2s ease, border 0.2s ease;
+
+                .image_block {
+                    width: 100%;
+                    height: 180px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .info_block {
+                    padding: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+
+                    h3 {
+                        font-size: 22px;
+                        font-weight: 500;
+                        color: var(--black);
+                    }
+
+                    p {
+                        font-size: 20px;
+                        font-weight: 700;
+                        color: var(--green);
+                    }
+                }
+            }
+
+            .create_card {
+                background-color: transparent;
+                box-shadow: none;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+
+                span {
+                    font-size: 30px;
+                    font-weight: 700;
+                    color: var(--green);
+                }
+            }
+        }
+
+        .load_more {
+            @include st.bigbox(auto);
+
+            .loadBtn {
+                @include st.but(12vw, var(--green), white);
+                background-color: transparent;
+                border: 1px var(--green) solid;
+                color: var(--green);
+                height: 6vh;
+                transition: color 0.2s ease;
+            }
+        }
+    }
+}

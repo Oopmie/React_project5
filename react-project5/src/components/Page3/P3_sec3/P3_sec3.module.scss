@@ -1,0 +1,110 @@
+@use '../../style_layout.scss' as st;
+
+.P3_sec3 {
+    background-color: var(--white);
+    width: 100%;
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+
+    .container {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+            color: var(--black);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .tabs {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            margin-bottom: 40px;
+
+            .tab {
+                background-color: transparent;
+                border: none;
+                font-size: 20px;
+                color: var(--gray);
+                cursor: pointer;
+                padding: 5px 0;
+                font-weight: 500;
+            }
+
+            .activeTab {
+                color: var(--green);
+            }
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            width: 100%;
+            margin-bottom: 50px;
+
+            .card {
+                @include st.card_layout;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                min-height: 220px;
+
+                .user {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 15px;
+
+                    .avatar {
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        background-color: var(--medium-gray);
+                    }
+
+                    .meta {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+
+                        h3 {
+                            font-size: 22px;
+                            font-weight: 700;
+                            color: var(--black);
+                        }
+
+                        .stars {
+                            height: 27px;
+                            width: fit-content;
+                            object-fit: contain;
+                        }
+                    }
+                }
+
+                p {
+                    font-size: 17px;
+                    color: var(--dark-gray);
+                    line-height: 1.5;
+                }
+            }
+        }
+
+        .load_more {
+            @include st.bigbox(auto);
+
+            .loadBtn {
+                @include st.but(12vw, var(--green), white);
+                background-color: transparent;
+                border: 1px var(--green) solid;
+                color: var(--green);
+                height: 6vh;
+                transition: color 0.2s ease;
+            }
+        }
+    }
+}

@@ -89,3 +89,12 @@
     padding: 30px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.01);
 }
+
+@mixin absolute_badge($bg, $radius) {
+    position: absolute;
+    background-color: $bg;
+    border-radius: $radius;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

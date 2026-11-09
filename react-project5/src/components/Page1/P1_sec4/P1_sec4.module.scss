@@ -1,0 +1,38 @@
+@use '../../style_layout.scss' as st;
+
+.P1_sec4 {
+    background-color: var(--white);
+    @extend %df_column;
+    height: 60vh;
+
+    .text {
+        width: 80%;
+        line-height: 55px;
+
+        p {
+            font-size: 25px;
+        }
+    }
+
+    .cards {
+        @include st.df_row(60%, 80%);
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: start;
+            width: 29%;
+            height: 60%;
+
+            p {
+                font-size: 20px;
+            }
+
+            h3 {
+                font-size: 25px;
+                font-weight: 700;
+            }
+        }
+    }
+}

@@ -13,11 +13,11 @@ export default function P1_sec5() {
                     </div>
                     <div>
                         <img src={Photos.p1s52} alt="" />
-                        <h3>Оплачивайте с р/с или карты компании</h3>
+                        <h3>Экономьте до 87% бюджета на фрилансе</h3>
                     </div>
                     <div>
                         <img src={Photos.p1s53} alt="" />
-                        <h3>Оплачивайте с р/с или карты компании</h3>
+                        <h3>Экономьте до 75% времени на решении фриланс задач</h3>
                     </div>
                     <h3 className={classes.h3t}>WorkTap — быстро, просто и безопасно!</h3>
                     <button>Начать!</button>

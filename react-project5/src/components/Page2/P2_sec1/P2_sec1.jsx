@@ -1,11 +1,11 @@
 import classes from "../P2_sec1/P2_sec1.module.scss"
-import Header2 from '../../Header2/Header2.jsx'
+import Header from '../../Header/Header.jsx'
 import { Photos } from "../../../Photos.js"
 
 export default function P2_sec1() {
     return (
         <>
-            <Header2 />
+            <Header />
             <section className={classes.P2_sec1}>
                 <div className={classes.container}>
                     <div className={classes.rcontainer}>

@@ -9,7 +9,10 @@ import ink from "../src/assets/ink.png"
 import insta from "../src/assets/insta.png"
 import kol from "../src/assets/kol.png"
 import logo from "../src/assets/logo.png"
-import modal from "../src/assets/modal.png"
+import modal1 from "../src/assets/modal1.png"
+import modal2 from "../src/assets/modal2.png"
+import modal3 from "../src/assets/modal3.png"
+import modal4 from "../src/assets/modal4.png"
 import nikita from "../src/assets/nikita.png"
 import p1s1 from "../src/assets/p1s1.png"
 import p1s21 from "../src/assets/p1s21.png"
@@ -49,7 +52,10 @@ export const Photos = {
     insta:insta,
     kol:kol,
     logo:logo,
-    modal:modal,
+    modal1:modal1,
+    modal2:modal2,
+    modal3:modal3,
+    modal4:modal4,
     nikita:nikita,
     p1s1:p1s1,
     p1s21:p1s21,

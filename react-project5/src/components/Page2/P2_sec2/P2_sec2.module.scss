@@ -1,0 +1,153 @@
+@use '../../style_layout.scss' as st;
+
+.P2_sec2 {
+    background-color: var(--white);
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+
+    .container {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+
+        .filter_panel {
+            @include st.df_row(auto, 100%);
+            margin-bottom: 40px;
+
+            .count {
+                font-size: 20px;
+                font-weight: 700;
+                color: var(--black);
+            }
+
+            .filters {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 15px;
+
+                input {
+                    @extend %input_text;
+                    width: 140px;
+                }
+
+                .dash {
+                    color: var(--gray);
+                }
+
+                select {
+                    @include st.filter_select;
+                }
+            }
+        }
+
+        .list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            margin-bottom: 40px;
+
+            .item {
+                @include st.card_layout;
+                @include st.df_row(auto, 100%);
+                align-items: flex-start;
+
+                .left {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    h2 {
+                        font-size: 25px;
+                        font-weight: 700;
+                        color: var(--black);
+                    }
+
+                    .user {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 15px;
+
+                        .avatar {
+                            width: 60px;
+                            height: 60px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                        }
+
+                        .user_info {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 4px;
+
+                            h3 {
+                                font-size: 22px;
+                                font-weight: 600;
+                                color: var(--black);
+                            }
+
+                            p {
+                                font-size: 18px;
+                                color: var(--dark-gray);
+                            }
+
+                            .rating {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                gap: 10px;
+
+                                img {
+                                    height: 20px;
+                                    object-fit: contain;
+                                }
+
+                                span {
+                                    font-size: 18px;
+                                    color: var(--gray);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .right {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    justify-content: space-between;
+                    min-height: 110px;
+
+                    .budget {
+                        font-size: 22px;
+                        font-weight: 700;
+                        color: var(--green);
+                    }
+
+                    .time,
+                    .offers {
+                        font-size: 18px;
+                        color: var(--gray);
+                    }
+                }
+            }
+        }
+
+        .load_more {
+            @include st.bigbox(auto);
+
+            .loadBtn {
+                @include st.but(12vw, var(--green), white);
+                background-color: transparent;
+                border: 1px var(--green) solid;
+                color: var(--green);
+                height: 6vh;
+                transition: color 0.2s ease;
+            }
+        }
+    }
+}

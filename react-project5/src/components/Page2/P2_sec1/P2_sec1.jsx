@@ -8,27 +8,24 @@ export default function P2_sec1() {
             <Header />
             <section className={classes.P2_sec1}>
                 <div className={classes.container}>
-                    <div className={classes.rcontainer}>
-                        <h1>Покупайте фриланс-услуги в <span>два клика</span></h1>
-                        <h2>Ворк — единица работы продавца, которую можно купить как товар в магазине </h2>
-                        <div className={classes.input}>
-                            <input type="text" name="" id="" placeholder="Что нужно сделать?" />
-                            <button>Найти</button>
-                        </div>
-                        <h3>Выберите рубрику, чтобы начать</h3>
-                        <div className={classes.categ}>
-                            <button>Тексты и переводы</button>
-                            <button>Разработка</button>
-                            <button>Дизайн</button>
-                            <button>Аудио, видео монтаж </button>
-                            <button>SEO и оптимизация</button>
-                            <button>Бизнес и жизнь</button>
-                            <button>Соцсети и реклама</button>
-                            <button>Все категории</button>
-                        </div>
+                    <h1>Ищите и находите подходящую работу среди <span>10,000+</span> проектов и покажите на что Вы способны!</h1>
+                    <div className={classes.input}>
+                        <input type="text" name="" id="" placeholder="Какую работу ищете?" />
+                        <button>Найти</button>
                     </div>
-                    <div className={classes.image}>
-                        <img src={Photos.p1s1} alt="" />
+                    <div className={classes.categ}>
+                        <button>Тексты и переводы</button>
+                        <button>Разработка</button>
+                        <button>Дизайн</button>
+                        <button>Аудио, видео монтаж</button>
+                        <button>SEO и оптимизация</button>
+                        <button>Бизнес и жизнь</button>
+                        <button>Соцсети и реклама</button>
+                        <button>Все категории</button>
+                    </div>
+                    <h2>Ниже все заказы по <span>дизайну</span></h2>
+                    <div className={classes.arrow}>
+                        <img src={Photos.strg} alt="" />
                     </div>
                 </div>
             </section>

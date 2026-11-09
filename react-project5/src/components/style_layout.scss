@@ -51,11 +51,41 @@
     width: $width;
     border-radius: 50px;
     border: none;
-    padding: 20px;    
+    padding: 20px;
     cursor: pointer;
 
     &:hover {
         background-color: $colorb;
         color: $color;
     }
+}
+
+%input_text {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--gray);
+    padding: 5px;
+    font-size: 14px;
+    text-align: center;
+    outline: none;
+
+    &::placeholder {
+        color: var(--gray);
+    }
+}
+
+@mixin filter_select {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    color: var(--black);
+    cursor: pointer;
+    outline: none;
+}
+
+@mixin card_layout {
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.01);
 }

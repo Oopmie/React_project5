@@ -1,0 +1,41 @@
+@use '../../style_layout.scss' as st;
+
+.P1_sec5{
+    background-image: url(../../../assets/p1s5.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 77vh;
+
+    h2{
+        color: white;
+    }
+
+    .h3t{
+        color: white;
+    }
+    .container{
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 100%;
+        margin-left: 15vw;
+        
+        div{
+            background-color: white;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 15px;
+            border-radius: 15px
+        }
+
+        button{
+            @include st.but(10vw, white, #5E4EDB);
+            background-color: #5E4EDB;
+            height: 7vh;
+            color: white;
+
+        }
+    }
+}

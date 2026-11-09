@@ -42,6 +42,7 @@
                     color: white;
                     background-color: var(--orange);
                     cursor: pointer;
+                    transition: all 0.2s ease;
 
                     &:hover {
                         background-color: var(--light-orange);

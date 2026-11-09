@@ -1,35 +1,117 @@
 @use '../style_layout.scss' as st;
 
-header {
+.header {
     background-color: var(--super-light-gray);
     @include st.bigbox(12vh);
+    width: 100%;
 
     .nav {
         @include st.df_row(12vh, 80vw);
 
-        .links {
-            @include st.df_row(100%, 40%);
+        .leftBlock {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 100%;
+            gap: 40px;
 
-            a {
-                font-size: 20px;
-                text-decoration: none;
-                color: black
+            .logo {
+                display: flex;
+                align-items: center;
+
+                img {
+                    height: 40px;
+                    object-fit: contain;
+                }
+            }
+
+            .links {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 30px;
+                height: 100%;
+
+                a {
+                    font-size: 20px;
+                    text-decoration: none;
+                    color: black;
+                    transition: color 0.2s ease;
+
+                    &:hover {
+                        color: var(--green);
+                    }
+                }
             }
         }
 
         .menuRight {
-            @include st.df_row(80%, 20%);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+            height: 80%;
 
             .RegBtn {
                 color: var(--green);
                 background-color: var(--light-gray);
-                @include st.but(auto, var(--green), var(--light-gray))
+                @include st.but(10vw, var(--green), var(--light-gray));
+                transition: all 0.2s ease;
             }
 
             .LogBtn {
                 color: var(--light-gray);
                 background-color: var(--green);
-                @include st.but(auto, var(--light-gray), var(--green))
+                @include st.but(10vw, var(--light-gray), var(--green));
+                transition: all 0.2s ease;
+            }
+        }
+
+        .profile {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 25px;
+
+            .buts {
+                display: flex;
+                flex-direction: row;
+                gap: 15px;
+                align-items: center;
+
+                img {
+                    width: 24px;
+                    height: 24px;
+                    cursor: pointer;
+                }
+            }
+
+            .man {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
+
+                a {
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: var(--black);
+                    text-decoration: none;
+                }
+
+                img {
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+
+                .str {
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 0;
+                    object-fit: contain;
+                }
             }
         }
     }

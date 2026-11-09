@@ -31,6 +31,7 @@
                     width: 80%;
                     font-size: 20px;
                     z-index: 1;
+                    outline: none;
                 }
 
                 button {
@@ -56,16 +57,31 @@
                 button {
                     padding: 20px;
                     background-color: var(--super-light-gray);
-                    border: 2px var(--light-gray) solid;
+                    border: 1px var(--light-gray) solid;
                     border-radius: 50px;
-                    font-size: 18px;
-                    margin: 10px;
+                    font-size: 16px;
+                    color: var(--dark-gray);
+                    margin: 5px 10px;
                     cursor: pointer;
+                    transition: color 0.2s ease;
+
+                    &:hover {
+                        color: var(--orange);
+                        border: 1px var(--orange) solid;
+                    }
                 }
 
                 button:last-child {
                     border: 1px var(--orange) solid;
+                    border-radius: 50px;
                     color: var(--orange);
+                    padding: 20px;
+                    transition: color 0.2s ease;
+
+                    &:hover {
+                        background-color: var(--orange);
+                        color: white;
+                    }
                 }
             }
         }

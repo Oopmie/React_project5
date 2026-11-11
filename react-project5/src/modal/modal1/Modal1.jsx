@@ -1,6 +1,12 @@
 import classes from "./Modal1.module.scss"
 import { Photos } from "../../Photos.js"
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+
 export default function Modal1({ onClose }) {
     return (
         <div className={classes.overlay} onClick={onClose}>
@@ -48,7 +54,33 @@ export default function Modal1({ onClose }) {
                 </div>
 
                 <div className={classes.right}>
-                    <button className={classes.close_btn} onClick={onClose}>&times;</button>
+                    <Swiper
+                        spaceBetween={30}
+                        centeredSlides={true}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        navigation={true}
+                        modules={[Autoplay, Pagination, Navigation]}
+                        className="mySwiper"
+                    >
+                        <SwiperSlide>
+                            <img src={Photos.modal1} alt="" />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src={Photos.modal2} alt="" />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src={Photos.modal3} alt="" />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src={Photos.modal4} alt="" />
+                        </SwiperSlide>
+                    </Swiper>
                     <div className={classes.info_card}>
                         <p>Worktap — это маркетплейс фриланс услуг, где можно купить услугу как товар в магазине или создать индивидуальный заказ на бирже.</p>
                     </div>

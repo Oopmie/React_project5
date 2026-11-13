@@ -41,6 +41,7 @@ import manon from "../src/assets/manon.png"
 import str from "../src/assets/str.png"
 import strg from "../src/assets/strg.png"
 import strw from "../src/assets/strw.png"
+import google from "../src/assets/google.png"
 
 export const Photos = {
     st45:st45,
@@ -85,5 +86,6 @@ export const Photos = {
     manon:manon,
     str:str,
     strg:strg,
-    strw:strw
+    strw:strw,
+    google:google
 }

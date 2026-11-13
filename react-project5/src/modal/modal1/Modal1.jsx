@@ -1,61 +1,76 @@
-import classes from "./Modal1.module.scss"
-import { Photos } from "../../Photos.js"
-
+import { useEffect } from 'react';
+import { Photos } from '../../Photos.js';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
-export default function Modal1({ onClose }) {
+import classes from './Modal1.module.scss';
+
+export default function Modal1({ onClose, onSwitchToRegister }) {
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape') onClose();
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [onClose]);
+
     return (
-        <div className={classes.overlay} onClick={onClose}>
-            <div className={classes.modal} onClick={(e) => e.stopPropagation()}>
-                <div className={classes.left}>
-                    <div className={classes.logo}>
-                        <img src={Photos.logo} alt="Worktap" />
+        <div className={classes.overlay}>
+            <div className={classes.modalFull}>
+                <button className={classes.closeBtn} onClick={onClose}>
+                    ✕
+                </button>
+                <div className={classes.leftcont}>
+                    <div onClick={onClose}>
+                        <img src={Photos.logo} alt="worktap" />
                     </div>
 
-                    <div className={classes.form_wrapper}>
-                        <span className={classes.subtitle}>Добро пожаловать!</span>
-                        <h2>Войдите в свой аккаунт</h2>
+                    <div className={classes.formWrapper}>
+                        <p className={classes.subtitle}>Добро пожаловать!</p>
+                        <h2 className={classes.title}>Войдите в свой аккаунт</h2>
 
-                        <form onSubmit={(e) => e.preventDefault()}>
-                            <div className={classes.input_group}>
-                                <label>E-mail</label>
-                                <input type="email" placeholder="E-mail" />
+                        <form className={classes.form} onSubmit={(e) => e.preventDefault()}>
+                            <div className={classes.inputGroup}>
+                                <label htmlFor="email">E-mail</label>
+                                <input id="email" type="email" placeholder="E-mail" />
                             </div>
 
-                            <div className={classes.input_group}>
-                                <label>Пароль</label>
-                                <input type="password" placeholder="Пароль" />
+                            <div className={classes.inputGroup}>
+                                <label htmlFor="password">Пароль</label>
+                                <input id="password" type="password" placeholder="Пароль" />
                             </div>
 
-                            <div className={classes.options}>
-                                <label className={classes.remember}>
+                            <div className={classes.optionsRow}>
+                                <label className={classes.rememberMe}>
                                     <input type="checkbox" />
-                                    <span>Запомнить меня</span>
+                                    <span className={classes.checkbox}></span>
+                                    Запомнить меня
                                 </label>
-                                <a href="#" className={classes.forgot}>Забыли пароль?</a>
+                                <a>Забыли пароль?</a>
                             </div>
 
-                            <button type="submit" className={classes.submit_btn}>Войти</button>
+                            <button type="submit" className={classes.loginBtn}>
+                                Войти
+                            </button>
 
-                            <button type="button" className={classes.google_btn}>
+                            <button type="button" className={classes.googleBtn}>
                                 <img src={Photos.google} alt="" />
                                 Или войдите с помощью Google
                             </button>
                         </form>
+
+                        <p className={classes.registerText}>
+                            У Вас все еще нет аккаунта?
+                            <a onClick={onSwitchToRegister}>  Зарегистрируйтесь бесплатно!</a>
+                        </p>
                     </div>
-
-                    <p className={classes.footer_text}>
-                        У Вас все еще нет аккаунта? <a href="#">Зарегистрируйтесь бесплатно!</a>
-                    </p>
                 </div>
-
-                <div className={classes.right}>
+                <div className={classes.rightcont}>
                     <Swiper
-                        spaceBetween={30}
+                        spaceBetween={0}
                         centeredSlides={true}
                         autoplay={{
                             delay: 2500,
@@ -64,9 +79,9 @@ export default function Modal1({ onClose }) {
                         pagination={{
                             clickable: true,
                         }}
-                        navigation={true}
+                        navigation={false}
                         modules={[Autoplay, Pagination, Navigation]}
-                        className="mySwiper"
+                        className={classes.mySwiper}
                     >
                         <SwiperSlide>
                             <img src={Photos.modal1} alt="" />
@@ -81,16 +96,15 @@ export default function Modal1({ onClose }) {
                             <img src={Photos.modal4} alt="" />
                         </SwiperSlide>
                     </Swiper>
-                    <div className={classes.info_card}>
-                        <p>Worktap — это маркетплейс фриланс услуг, где можно купить услугу как товар в магазине или создать индивидуальный заказ на бирже.</p>
-                    </div>
-                    <div className={classes.dots}>
-                        <span className={`${classes.dot} ${classes.active_dot}`}></span>
-                        <span className={classes.dot}></span>
-                        <span className={classes.dot}></span>
+
+                    <div className={classes.infoCard}>
+                        <p>
+                            Worktap — это маркетплейс фриланс услуг, где можно купить услугу как
+                            товар в магазине или создать индивидуальный заказ на бирже.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }

@@ -16,24 +16,7 @@
 }
 
 .closeBtn {
-    position: absolute;
-    top: 25px;
-    right: 30px;
-    z-index: 4;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.85);
-    color: var(--black);
-    font-size: 18px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-
-    &:hover {
-        background-color: var(--green);
-        color: white;
-    }
+    @include st.closeBtn
 }
 
 .leftcont {
@@ -47,7 +30,6 @@
 
     .formWrapper {
         width: 100%;
-        max-width: 440px;
         margin: auto 0;
 
         .subtitle {
@@ -162,6 +144,7 @@
 }
 
 .registerText {
+    font-size: 20px;
     margin-top: 30px;
     text-align: center;
     color: var(--dark-gray);

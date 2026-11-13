@@ -4,11 +4,14 @@ import { Photos } from "../../Photos.js"
 import { useLocation } from 'react-router-dom'
 import { useState } from 'react'
 import Modal1 from '../../modal/modal1/Modal1.jsx'
+import Modal2 from '../../modal/modal2/Modal2.jsx'
+import Modal3 from '../../modal/modal3/Modal3.jsx'
+import Modal4 from '../../modal/modal4/Modal4.jsx'
 
 export default function Header() {
     const active = ({ isActive }) => `${classes.navlink} ${isActive ? classes.active : ""}`;
     const location = useLocation();
-    const [open, setOpen] = useState(false)
+    const [activeModal, setActiveModal] = useState(null);
     return (
         <>
             <header className={classes.header}>
@@ -29,12 +32,37 @@ export default function Header() {
                     </div>
                     {location.pathname === '/' && (
                         <div className={classes.menuRight}>
-                            <button className={classes.RegBtn}>Регистрация</button>
-                            <button onClick={() => setOpen(true)} className={classes.LogBtn}>Войти</button>
-                            {open && (
-                                <Modal1 onClose={() => setOpen(false)}>
-                                    <button>yoo</button>
+                            <button onClick={() => setActiveModal('register')} className={classes.RegBtn}>
+                                Регистрация
+                            </button>
+                            <button onClick={() => setActiveModal('login')} className={classes.LogBtn}>
+                                Войти
+                            </button>
+                            {activeModal === 'login' && (
+                                <Modal1
+                                    onClose={() => setActiveModal(null)}
+                                    onSwitchToRegister={() => setActiveModal('register')}
+                                    onSwitchToForgot={() => setActiveModal('forgot')}>
                                 </Modal1>
+                            )}
+                            {activeModal === 'register' && (
+                                <Modal2
+                                    onClose={() => setActiveModal(null)}
+                                    onSwitchToLogin={() => setActiveModal('login')}>
+                                </Modal2>
+                            )}
+                            {activeModal === 'forgot' && (
+                                <Modal3
+                                    onClose={() => setActiveModal(null)}
+                                    onSwitchToLogin={() => setActiveModal('login')}
+                                    onSwitchToNewPassword={() => setActiveModal('newPassword')}>
+                                </Modal3>
+                            )}
+                            {activeModal === 'newPassword' && (
+                                <Modal4
+                                    onClose={() => setActiveModal(null)}
+                                    onSuccess={() => setActiveModal('login')}
+                                />
                             )}
                         </div>
                     )}

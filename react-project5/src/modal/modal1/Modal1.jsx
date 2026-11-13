@@ -8,7 +8,7 @@ import 'swiper/css/navigation';
 
 import classes from './Modal1.module.scss';
 
-export default function Modal1({ onClose, onSwitchToRegister }) {
+export default function Modal1({ onClose, onSwitchToRegister,onSwitchToForgot }) {
     useEffect(() => {
         const handleKeyDown = (e) => {
             if (e.key === 'Escape') onClose();
@@ -49,7 +49,7 @@ export default function Modal1({ onClose, onSwitchToRegister }) {
                                     <span className={classes.checkbox}></span>
                                     Запомнить меня
                                 </label>
-                                <a>Забыли пароль?</a>
+                                <a onClick={onSwitchToForgot}>Забыли пароль?</a>
                             </div>
 
                             <button type="submit" className={classes.loginBtn}>

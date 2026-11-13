@@ -24,7 +24,7 @@ export default function Modal2({ onClose, onSwitchToLogin }) {
                     ✕
                 </button>
                 <div className={classes.leftcont}>
-                    <div className={classes.logo} onClick={onClose}>
+                    <div onClick={onClose}>
                         <img src={Photos.logo} alt="worktap" />
                     </div>
 
@@ -49,7 +49,7 @@ export default function Modal2({ onClose, onSwitchToLogin }) {
                             </div>
 
                             <div className={classes.inputGroup}>
-                                <label htmlFor="phone">Телефон номер</label>
+                                <label htmlFor="phone">Номер телефона</label>
                                 <input id="phone" type="tel" placeholder="Телефон" />
                             </div>
 

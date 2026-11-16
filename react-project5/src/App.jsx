@@ -1,7 +1,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Analytics } from '@vercel/analytics/react'
 import Page1 from './pages/Page1/Page1.jsx'
 import Page2 from './pages/Page2/Page2.jsx'
 import Page3 from './pages/Page3/Page3.jsx'
+
 export default function App() {
 
   return (
@@ -13,6 +15,7 @@ export default function App() {
           <Route path='/Page3' element={<Page3 />} />
         </Routes>
       </BrowserRouter>
+      <Analytics />
     </>
   )
 }
